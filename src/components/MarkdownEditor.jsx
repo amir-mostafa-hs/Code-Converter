@@ -8,6 +8,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import "react-mde/lib/styles/css/react-mde-all.css";
 import { CodeContext } from "@/context/CodeContext";
+import SaveFile from "./SaveFile";
 
 const MarkdownEditor = () => {
   const { state, setState } = useContext(CodeContext);
@@ -78,6 +79,7 @@ const MarkdownEditor = () => {
         className="border dark:border-gray-700 rounded-lg p-4 mt-2 dark:bg-gray-800"
         dangerouslySetInnerHTML={{ __html: converter.makeHtml(value) }}
       ></div>
+      <SaveFile />
     </div>
   );
 };
