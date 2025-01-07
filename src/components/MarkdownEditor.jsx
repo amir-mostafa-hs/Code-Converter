@@ -1,16 +1,22 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import ReactMde from "react-mde";
 import Showdown from "showdown";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import "react-mde/lib/styles/css/react-mde-all.css";
+import { CodeContext } from "@/context/CodeContext";
 
 const MarkdownEditor = () => {
-  const [value, setValue] = useState("");
+  const { state, setState } = useContext(CodeContext);
+  const [value, setValue] = useState(state);
   const [selectedTab, setSelectedTab] = useState("write");
+
+  useEffect(() => {
+    setValue(state);
+  }, [state]);
 
   const converter = new Showdown.Converter();
 

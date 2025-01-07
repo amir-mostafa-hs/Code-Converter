@@ -1,3 +1,4 @@
+import ExampleComponent from "@/components/ExampleComponent";
 import MarkdownEditor from "@/components/MarkdownEditor";
 import OpenFile from "@/components/OpenFile";
 
@@ -9,6 +10,7 @@ export default function Home() {
           Hello, Welcome to code convertor
         </h1>
         <p>This program uses Google AI Studio to convert and organize code.</p>
+        {/* <ExampleComponent /> */}
         <OpenFile />
         <MarkdownEditor />
       </main>

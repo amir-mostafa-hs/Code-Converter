@@ -1,24 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { useContext } from "react";
+import { CodeContext } from "@/context/CodeContext";
 
 const OpenFile = () => {
-  const [codeSource, setCodeSource] = useState("");
+  const { state, setState } = useContext(CodeContext);
 
   const handleReadFile = (file) => {
     const reader = new FileReader();
     reader.onload = (e) => {
       const content = e.target.result;
-      setCodeSource(content);
+      let convertToMarkdown;
+      switch (file.target.files[0].name.split(".")[1]) {
+        case "js":
+          convertToMarkdown = "```javascript\n" + content + "\n```";
+          break;
+        case "py":
+          convertToMarkdown = "```python\n" + content + "\n```";
+          break;
+        default:
+          break;
+      }
+      setState(convertToMarkdown);
     };
     reader.readAsText(file.target.files[0]);
   };
-  console.log(codeSource);
 
   return (
     <div>
       <button
-        className="rounded-xl bg-emerald-500 hover:bg-emerald-600 px-5 py-2"
+        className="rounded-xl bg-gray-800 hover:bg-gray-900 px-5 py-2"
         onClick={() => document.getElementById("fileInput").click()}
       >
         Select Code Base File
