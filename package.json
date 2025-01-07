@@ -2,15 +2,27 @@
   "name": "code-converter",
   "version": "1.0.0",
   "description": "Convert scripting language codes to each other with the help of Google AI Studio API",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "electron": "electron ./src/electron.js"
   },
   "keywords": [],
   "author": "Amir Mostafa Haji Sadeghian <amir.mostafa.hs@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "@google/generative-ai": "^0.21.0",
-    "dotenv": "^16.4.7"
+    "next": "15.1.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "electron": "^33.3.1",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
   }
 }
