@@ -1,0 +1,31 @@
+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
+
+————————————————
+npm install openai
+import OpenAI from "openai";
+
+const openai = new OpenAI({
+  apiKey: "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",
+});
+
+const completion = openai.chat.completions.create({
+  model: "gpt-4o-mini",
+  store: true,
+  messages: [
+    {"role": "user", "content": "write a haiku about ai"},
+  ],
+});
+
+completion.then((result) => console.log(result.choices[0].message));
+
+===================== Gemini =====================
+curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=GEMINI_API_KEY" \
+-H 'Content-Type: application/json' \
+-X POST \
+-d '{
+  "contents": [{
+    "parts":[{"text": "Explain how AI works"}]
+    }]
+   }'
+
+AIzaSyC9n3CMZxA7amz9AFU93_u4zKfOlxGIF7g

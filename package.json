@@ -1,0 +1,16 @@
+{
+  "name": "code-converter",
+  "version": "1.0.0",
+  "description": "Convert scripting language codes to each other with the help of Google AI Studio API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Amir Mostafa Haji Sadeghian <amir.mostafa.hs@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "dotenv": "^16.4.7"
+  }
+}
