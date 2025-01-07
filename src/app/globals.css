@@ -7,6 +7,20 @@
   --foreground: #171717;
 }
 
+.react-mde .mde-tabs button {
+  @apply text-black dark:text-black;
+  @apply px-2;
+}
+
+.react-mde .mde-tabs button.selected {
+  @apply text-black dark:text-black;
+  background-color: #e8e8e8;
+}
+
+.mde-preview .mde-preview-content pre {
+  @apply bg-gray-800 !important;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

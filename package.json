@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Convert scripting language codes to each other with the help of Google AI Studio API",
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -13,12 +13,13 @@
   "author": "Amir Mostafa Haji Sadeghian <amir.mostafa.hs@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "markdown-it": "^14.1.0",
+    "next": "14.2.22",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.22",
     "react-markdown": "^9.0.3",
-    "react-markdown-editor-lite": "^1.3.4"
+    "react-mde": "^11.5.0",
+    "react-syntax-highlighter": "^15.6.1",
+    "showdown": "^2.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
