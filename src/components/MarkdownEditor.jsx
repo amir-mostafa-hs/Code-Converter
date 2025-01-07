@@ -20,12 +20,17 @@ const MarkdownEditor = () => {
 
   const converter = new Showdown.Converter();
 
+  const handleChange = (e) => {
+    setValue(e);
+    setState(e);
+  };
+
   return (
     <div className="dark:bg-gray-900 dark:text-gray-100 p-6 rounded-lg">
       <h1 className="text-2xl font-bold mb-4">Markdown Editor</h1>
       <ReactMde
         value={value}
-        onChange={setValue}
+        onChange={handleChange}
         selectedTab={selectedTab}
         onTabChange={setSelectedTab}
         generateMarkdownPreview={(markdown) =>

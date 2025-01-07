@@ -18,7 +18,7 @@ async function convertCode(sourceCode, sourceLanguage, targetLanguage) {
 
 async function formatCode(code, language, styleGuide = "CS50 style50") {
   const prompt = `Format the following ${language} code according to ${styleGuide}:\n\n${code}`;
-  return await callGeminiAPI(prompt);
+  return await model.generateContent(prompt);
 }
 
 const sampleCode = `

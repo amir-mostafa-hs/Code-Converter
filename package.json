@@ -13,6 +13,7 @@
   "author": "Amir Mostafa Haji Sadeghian <amir.mostafa.hs@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@google/generative-ai": "^0.21.0",
     "next": "14.2.22",
     "react": "^18",
     "react-dom": "^18",
