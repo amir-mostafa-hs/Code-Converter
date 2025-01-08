@@ -9,6 +9,7 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import "react-mde/lib/styles/css/react-mde-all.css";
 import { CodeContext } from "@/context/CodeContext";
 import SaveFile from "./SaveFile";
+import OrganizeCode from "./OrganizeCode";
 
 const MarkdownEditor = () => {
   const { state, setState } = useContext(CodeContext);
@@ -37,7 +38,7 @@ const MarkdownEditor = () => {
         generateMarkdownPreview={(markdown) =>
           Promise.resolve(
             <ReactMarkdown
-              children={markdown}
+              // children={markdown}
               components={{
                 code({ node, inline, className, children, ...props }) {
                   const match = /language-(\w+)/.exec(className || "");
@@ -57,7 +58,9 @@ const MarkdownEditor = () => {
                   );
                 },
               }}
-            />
+            >
+              {markdown}
+            </ReactMarkdown>
           )
         }
         childProps={{
@@ -79,7 +82,10 @@ const MarkdownEditor = () => {
         className="border dark:border-gray-700 rounded-lg p-4 mt-2 dark:bg-gray-800"
         dangerouslySetInnerHTML={{ __html: converter.makeHtml(value) }}
       ></div>
-      <SaveFile />
+      <div className="flex gap-3">
+        <SaveFile />
+        <OrganizeCode />
+      </div>
     </div>
   );
 };

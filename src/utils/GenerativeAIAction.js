@@ -11,8 +11,14 @@ async function convertCode(sourceCode, sourceLanguage, targetLanguage) {
   const prompt = `Convert the following ${sourceLanguage} code to ${targetLanguage}:\n\n${sourceCode}`;
   return await model.generateContent(prompt);
 }
-
-async function formatCode(code, language, styleGuide = "CS50 style50") {
+/**
+ *
+ * @param {*} code - The code to format
+ * @param {*} language - The language of the code
+ * @param {*} styleGuide - The style guide to follow ('google style guide' | 'airbnb style guide' | 'standard js' | 'pep8')
+ * @returns
+ */
+async function formatCode(code, language, styleGuide = "google style guide") {
   const prompt = `Format the following ${language} code according to ${styleGuide}:\n\n${code}`;
   return await model.generateContent(prompt);
 }
